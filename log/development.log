@@ -33386,3 +33386,496 @@ Processing by CarsController#index as HTML
 Completed 200 OK in 110ms (Views: 93.7ms | ActiveRecord: 4.9ms)
 
 
+Started GET "/cars" for 127.0.0.1 at 2018-01-01 18:16:55 +0100
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" ORDER BY "cars"."name" ASC[0m
+  Rendered cars/index.html.erb within layouts/application (39.0ms)
+  Rendered shared/_navbar.html.erb (5.0ms)
+Completed 500 Internal Server Error in 8009ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"rentals"}, missing required keys: [:car_id]):
+    11: 
+    12:       <!-- Links when logged in -->
+    13:       <% if current_user.try(:admin?) %>
+    14:       <%= link_to 'Dashboard', car_rentals_path , class: "navbar-wagon-item navbar-wagon-link" %>
+    15:       <% end %>
+    16: 
+    17:       <%= link_to "Nos vehicules", cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  
+app/views/shared/_navbar.html.erb:14:in `_app_views_shared__navbar_html_erb___325865135782717803_70183389009320'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3085500721527162027_70183401007860'
+Started GET "/cars" for 127.0.0.1 at 2018-01-01 18:20:20 +0100
+  
+ArgumentError ('' is not a supported controller name. This can lead to potential routing problems. See http://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:10:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/cars" for 127.0.0.1 at 2018-01-01 18:20:29 +0100
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" ORDER BY "cars"."name" ASC[0m
+  Rendered cars/index.html.erb within layouts/application (45.4ms)
+  Rendered shared/_navbar.html.erb (475.8ms)
+Completed 500 Internal Server Error in 7843ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dashboard_path' for #<#<Class:0x00007fa9ac6fde40>:0x00007fa9b584a808>):
+    11: 
+    12:       <!-- Links when logged in -->
+    13:       <% if current_user.try(:admin?) %>
+    14:       <%= link_to 'Dashboard', dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
+    15:       <% end %>
+    16: 
+    17:       <%= link_to "Nos vehicules", cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  
+app/views/shared/_navbar.html.erb:14:in `_app_views_shared__navbar_html_erb___325865135782717803_70183205776400'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3085500721527162027_70183431738400'
+Started GET "/cars" for 127.0.0.1 at 2018-01-01 18:20:38 +0100
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" ORDER BY "cars"."name" ASC[0m
+  Rendered cars/index.html.erb within layouts/application (33.2ms)
+  Rendered shared/_navbar.html.erb (276.9ms)
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dashboard_path' for #<#<Class:0x00007fa99a1fc890>:0x00007fa99c4633c0>):
+    11: 
+    12:       <!-- Links when logged in -->
+    13:       <% if current_user.try(:admin?) %>
+    14:       <%= link_to 'Dashboard', dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
+    15:       <% end %>
+    16: 
+    17:       <%= link_to "Nos vehicules", cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  
+app/views/shared/_navbar.html.erb:14:in `_app_views_shared__navbar_html_erb___325865135782717803_70183417623560'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3085500721527162027_70183206025540'
+Started GET "/cars" for 127.0.0.1 at 2018-01-01 18:20:44 +0100
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" ORDER BY "cars"."name" ASC[0m
+  Rendered cars/index.html.erb within layouts/application (5.0ms)
+  Rendered shared/_navbar.html.erb (302.6ms)
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dashboard_path' for #<#<Class:0x00007fa99a1fc890>:0x00007fa9ab726d78>):
+    11: 
+    12:       <!-- Links when logged in -->
+    13:       <% if current_user.try(:admin?) %>
+    14:       <%= link_to 'Dashboard', dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
+    15:       <% end %>
+    16: 
+    17:       <%= link_to "Nos vehicules", cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  
+app/views/shared/_navbar.html.erb:14:in `_app_views_shared__navbar_html_erb___325865135782717803_70183346114520'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3085500721527162027_70183351336680'
+Started GET "/" for 127.0.0.1 at 2018-01-01 18:20:49 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 6]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (366.1ms)
+Completed 500 Internal Server Error in 392ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dashboard_path' for #<#<Class:0x00007fa9ac774dd8>:0x00007fa9ac73ed78>):
+    11: 
+    12:       <!-- Links when logged in -->
+    13:       <% if current_user.try(:admin?) %>
+    14:       <%= link_to 'Dashboard', dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
+    15:       <% end %>
+    16: 
+    17:       <%= link_to "Nos vehicules", cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  
+app/views/shared/_navbar.html.erb:14:in `_app_views_shared__navbar_html_erb___325865135782717803_70183433929480'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3085500721527162027_70183359701980'
+Started GET "/" for 127.0.0.1 at 2018-01-01 18:21:14 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 6]]
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (3.0ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 79.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:21:17 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (3.0ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 59.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:22:54 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:22:59 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 66.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:24:09 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 7507ms (Views: 7504.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:25:31 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:25:45 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:27:49 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (2.1ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:27:50 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:28:05 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+    7:     <h3><%= @rentals.name %></h3>
+    8:     <p>10/07/17</p>
+    9:   </div>
+   10:   <div class="message-body">
+  
+app/views/pages/dashboard.html.erb:7:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183432642260'
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:28:13 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `car' for nil:NilClass):
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+    7:     <h3><%= @rentals.car.name %></h3>
+    8:     <p>10/07/17</p>
+    9:   </div>
+   10:   <div class="message-body">
+  
+app/views/pages/dashboard.html.erb:7:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183222172640'
+Started PUT "/__web_console/repl_sessions/6616d24e0c90b2098829d3a5ed07a1c1" for 127.0.0.1 at 2018-01-01 18:28:30 +0100
+Started PUT "/__web_console/repl_sessions/6616d24e0c90b2098829d3a5ed07a1c1" for 127.0.0.1 at 2018-01-01 18:28:32 +0100
+Started PUT "/__web_console/repl_sessions/6616d24e0c90b2098829d3a5ed07a1c1" for 127.0.0.1 at 2018-01-01 18:28:34 +0100
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:28:47 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (3.3ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mRental Load (0.8ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:30:01 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `car_id' for #<Class:0x00007fa9ae02e450>):
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+    7:     <h3><%= Rental.car_id %></h3>
+    8:     <p>10/07/17</p>
+    9:   </div>
+   10:   <div class="message-body">
+  
+app/views/pages/dashboard.html.erb:7:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183441154960'
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:31:06 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "rentals"."car_id" FROM "rentals"[0m
+  Rendered pages/dashboard.html.erb within layouts/application (1.6ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:35:36 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/huangd/Desktop/RUBY_DRIVY/EasyCarRent/app/views/pages/dashboard.html.erb:23: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/huangd/Desktop/RUBY_DRIVY/EasyCarRent/app/views/pages/dashboard.html.erb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/pages/dashboard.html.erb:23: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/pages/dashboard.html.erb:25: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:35:46 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Class:0x00007fa9ae02e450>):
+    1: <h2 class="text-center">Location en cours </h2>
+    2: 
+    3: <%= Rental.each do |rental| %>
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+  
+app/views/pages/dashboard.html.erb:3:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183205184080'
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:36:09 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.3ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  Rendered pages/dashboard.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `pluck' for #<Rental:0x00007fa99bc517b8>):
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+    7:     <h3><%= Car.find(rental.pluck(:car_id)).name %></h3>
+    8:     <p>10/07/17</p>
+    9:   </div>
+   10:   <div class="message-body">
+  
+app/views/pages/dashboard.html.erb:7:in `block in _app_views_pages_dashboard_html_erb___2812751007554975358_70183219036860'
+app/views/pages/dashboard.html.erb:3:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183219036860'
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:36:49 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h2 class="text-center">Location en cours </h2>
+    2: 
+    3: <%= @rentals.each do |rental| %>
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+  
+app/views/pages/dashboard.html.erb:3:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183210752940'
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:37:03 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h2 class="text-center">Location en cours </h2>
+    2: 
+    3: <%= @rentals.each do |rental| %>
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+  
+app/views/pages/dashboard.html.erb:3:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183434387700'
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:37:09 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  Rendered pages/dashboard.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `pluck' for #<Rental:0x00007fa9b4893018>):
+    4: <div class="message">
+    5:   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    6:   <div class="message-name">
+    7:     <h3><%= Car.find(rental.pluck(:car_id)).name %></h3>
+    8:     <p>10/07/17</p>
+    9:   </div>
+   10:   <div class="message-body">
+  
+app/views/pages/dashboard.html.erb:7:in `block in _app_views_pages_dashboard_html_erb___2812751007554975358_70183427628240'
+app/views/pages/dashboard.html.erb:3:in `_app_views_pages_dashboard_html_erb___2812751007554975358_70183427628240'
+Started PUT "/__web_console/repl_sessions/4eb4f0ebb796798fe00fe481ac629c4d" for 127.0.0.1 at 2018-01-01 18:37:13 +0100
+Started PUT "/__web_console/repl_sessions/4eb4f0ebb796798fe00fe481ac629c4d" for 127.0.0.1 at 2018-01-01 18:37:13 +0100
+Started PUT "/__web_console/repl_sessions/4eb4f0ebb796798fe00fe481ac629c4d" for 127.0.0.1 at 2018-01-01 18:37:19 +0100
+Started PUT "/__web_console/repl_sessions/4eb4f0ebb796798fe00fe481ac629c4d" for 127.0.0.1 at 2018-01-01 18:37:40 +0100
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT  "rentals".* FROM "rentals" ORDER BY "rentals"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRental Load (0.3ms)[0m  [1m[34mSELECT  "rentals".* FROM "rentals" ORDER BY "rentals"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:39:12 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  Rendered pages/dashboard.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/huangd/Desktop/RUBY_DRIVY/EasyCarRent/app/views/pages/dashboard.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+...Car.find(rental.car_id)).name );@output_buffer.safe_append='...
+...                               ^):
+  
+app/views/pages/dashboard.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:39:28 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Car Load (0.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/dashboard.html.erb within layouts/application (3.0ms)
+  Rendered shared/_navbar.html.erb (3.0ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:39:46 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Car Load (0.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 58.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:40:56 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Car Load (0.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+  Rendered shared/_navbar.html.erb (3.1ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:41:35 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Car Load (0.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/pages/dashboard" for 127.0.0.1 at 2018-01-01 18:42:16 +0100
+Processing by PagesController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/dashboard.html.erb within layouts/application
+  [1m[36mRental Load (0.2ms)[0m  [1m[34mSELECT "rentals".* FROM "rentals"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Car Load (0.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/dashboard.html.erb within layouts/application (4.1ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 0.9ms)
+
+

@@ -1,0 +1,21 @@
+<h2 class="text-center">Location en cours </h2>
+
+<% Rental.all.each do |rental| %>
+<div class="message">
+  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+  <div class="message-name">
+    <h3><%= User.find(rental.user_id).email %></h3>
+    <p><%= rental.created_at %></p>
+  </div>
+  <div class="message-body">
+    <p><strong><%= Car.find(rental.car_id).name %></strong></p>
+    <p>
+      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+    </p>
+  </div>
+  <div class="message-status">
+    <p class="status pending">Pending</p>
+    <p class="price">€345</p>
+  </div>
+</div>
+<% end %>

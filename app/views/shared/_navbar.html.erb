@@ -11,7 +11,7 @@
 
       <!-- Links when logged in -->
       <% if current_user.try(:admin?) %>
-      <%= link_to 'Dashboard', "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Dashboard', pages_dashboard_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
 
       <%= link_to "Nos vehicules", cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
