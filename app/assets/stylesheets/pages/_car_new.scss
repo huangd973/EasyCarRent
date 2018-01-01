@@ -1,0 +1,275 @@
+@import "compass/css3";
+
+/* =========
+   Get Fonts */
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+/* ================
+   Assign Variables */
+$primary-color: #6EB590;
+$secondary-color: #777;
+$radius: 4px;
+$border-width: 1px;
+
+/* ===========================
+   Setup Mixins/Helper Classes */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* ==========
+   Setup Page */
+*, *:before, *:after { box-sizing: border-box; }
+
+/* ================
+   Container Styling */
+.container {
+  position: relative;
+  background: white;
+  background: rgba(white,.8);
+  padding: 3em;
+  border-radius: $radius;
+  @extend .clearfix;
+  h1 { font-weight: normal; color: $primary-color; margin: 0 0 0 0; }
+  p { color: $secondary-color; margin: 0 0 1em 0; padding: 0 0 .5em 0; border-bottom: 1px solid #eee;}
+}
+
+/* ===========
+   Form Styles */
+label { display: block; clear: both; margin-bottom: .5em; color: $primary-color;}
+
+input, textarea, select, button, .button, .select, .file {
+  width: 100%;
+  display: block;
+}
+input[type=text],
+input[type=email],
+input[type=phone],
+input[type=password],
+input[type=url],
+input[type=number],
+input[type=search],
+input[type=date],
+input[type=time],
+input[type=color],
+textarea,
+label.select select,
+label.file input
+{
+  display: inline-block;
+  border: $border-width solid #ddd;
+  margin-bottom: 1em;
+  line-height: 1.25em;
+  padding: .5em;
+  transition: border-color .2s ease;
+  border-radius: $radius;
+  background: white;
+  box-shadow: 0 .25em .5em rgba(black, .0625) inset;
+  color: $secondary-color;
+  &:hover { border-color: lighten($primary-color,20); }
+  &:focus { border-color: $primary-color; outline: none;}
+}
+
+input[type=search] { width: 100%; box-sizing: border-box; }
+input[type=color] { padding: 0; height: 2.625em; }
+
+select, textarea, input {
+    appearance: normal;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+label.checkbox,label.radio {
+  display: block;
+  clear: none;
+  overflow: hidden;
+  line-height: 1em;
+  height: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  padding-left: 1.25em;
+  cursor: pointer;
+  user-select: none;
+  color: $secondary-color;
+  input { display: none; }
+
+  i {
+    display:block;
+    position: absolute;
+    content: '';
+    top:0;
+    left:0;
+    width: 1em;
+    height: 1em;
+    border: $border-width solid #ccc;
+    border-radius: $radius;
+    transition: background .2s ease;
+    box-shadow: 0 .25em .25em rgba(black, .0625) inset;
+    background: white;
+    &:before {
+      display:block;
+      position: absolute;
+      top:$border-width;
+      left:0;
+      width: 100%;
+      height: 100%;
+      line-height: 1;
+      font-size: .75em;
+      text-align: center;
+      color: white;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+  }
+  &:hover i { border-color: lighten($primary-color,20);  background: lighten($primary-color,30);}
+  &:hover i:before { opacity: .5; }
+  input:focus + i, input:checked + i { border-color: $primary-color; outline: none; background: $primary-color}
+  input:checked + i:before,
+  input[checked="checked"] + i:before {
+    opacity: 1;
+  }
+}
+label.radio i { border-radius: 1em; }
+label.radio i:before {
+  content: '';
+  font-size: 1em;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  border-radius: 1em;
+  background: white;
+}
+
+label.toggle {
+  cursor: pointer;
+  user-select: none;
+  transition: border .2s ease;
+  line-height: 1.5em;
+  input { display: none; }
+  i {
+    position: relative;
+    display: inline-block;
+    float: right;
+    height: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 100em;
+    padding: .125em 0 .125em 2em;
+    transition: padding .2s ease;
+    box-shadow: 0 .25em .25em rgba(black, .0625) inset;
+    background: white;
+    &:before {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      font-size: .75em;
+      line-height: 1.75em;
+      left:.5em; top: 0;
+      content: 'OFF';
+      font-style: normal;
+    }
+    &:after {
+      content: '';
+      display:inline-block;
+      position: relative;
+      z-index: 1;
+      width: 1.125em;
+      height: 1.125em;
+      background: $primary-color;
+      border-radius: 1em;
+      margin: 0 .125em;
+    }
+  }
+  &:hover i { border-color: lighten($primary-color,20); }
+  input:checked + i {
+    padding: .125em 2em .125em 0;
+    border-color: $primary-color;
+    &:before {
+      left: auto; right: .5em;
+      content: 'ON';
+    }
+  }
+}
+
+label.select {
+  position: relative;
+  select {
+    background: white;
+    color: grey;
+  }
+  i {
+    pointer-events: none;
+    position: absolute;
+    width: 2em;
+    height: 2.25em;
+    font-size: 1em;
+    line-height: 2.25em;
+    text-align: center;
+    top: 1px;
+    right: 1px;
+    color: white;
+    background: $primary-color;
+    border-radius: 0 $radius/1.5 $radius/1.5 0;
+    transition: background .2s ease;
+  }
+  &:hover i { background: lighten($primary-color,5) }
+}
+
+input[type=range] {
+  appearance: none;
+  border-radius: 100px;
+  border: $border-width solid #ccc;
+  padding: .125em;
+  margin-bottom: .5em;
+  box-shadow: 0 .25em .25em rgba(black, .0625) inset;
+  &:hover { border-color: lighten($primary-color,20); }
+  &:focus { border-color: $primary-color; outline: none; outline: none;}
+}
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  background: $primary-color;
+  border-radius: 100px;
+  width:1.25em;
+  height:1.25em;
+}
+
+button, .button, input[type="submit"],input[type="button"] {
+  font-size: 1.25em;
+  display: inline-block;
+  width: auto;
+  padding: .5em 1em;
+  margin: 0 .25em .5em 0;
+  background: $primary-color;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $radius;
+  transition: background-color .2s ease;
+  cursor: pointer;
+  &:hover { background: lighten($primary-color,5) }
+  &:active { background: darken($primary-color,5) }
+}
+
+.inline-group {
+  label.checkbox,label.radio,label.toggle { float: left; margin-right: 2em; }
+  @extend .clearfix;
+}
+
+.column-group {
+  label { float: left; min-width: percentage(1/3) }
+  @extend .clearfix;
+}
+
+// Simple grid system
+
+.row { margin: 0 -.5em; @extend .clearfix; }
+:last-child.columns { float: right; }
+.columns { float: left; padding: 0 .5em; }
+.half { width: percentage(1/2) }
+.third { width: percentage(1/3) }

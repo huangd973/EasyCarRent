@@ -1,0 +1,24 @@
+<% if current_user.try(:admin?) %>
+     <%= link_to 'Ajouter une voiture', new_car_path, class: 'btn btn-primary btn-lg btn-block' %>
+<% end %>
+<h1 style="color: black">Nos Vehicules</h1>
+<br>
+
+<div class="container">
+  <% @cars.each do |car| %>
+  <div class="column">
+    <div class="col-xs-12 col-sm-4">
+    <div class="card" style="background-image:url(<%= car.cars.first.url%>);">
+      <div class="card-description">
+        <h2><span style="font-size: 50px;"><%= car.price_cents %></span>€/Jrs</h2>
+        <h2><%=  link_to car.name, car %></h2>
+        <p style="color: white;"><%= car.year %>, Moteur <%= car.engine %>, <%= car.places %> Places, <%= car.gearbox %></p>
+      </div>
+
+      <%= link_to 'Show', car, class: 'card-link' %>
+    </div>
+    <br>
+    </div>
+  </div>
+  <% end %>
+</div>

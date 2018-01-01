@@ -1,0 +1,34 @@
+I"à(function() {
+  var desktop_ui_init, mobile_ui_init;
+
+  desktop_ui_init = function() {};
+
+  mobile_ui_init = function() {};
+
+  $(function() {
+    if ($(window).width() < 620) {
+      jQuery(document).on('turbolinks:load', function() {});
+      $('.scroller').slick({
+        dots: true,
+        arrows: true
+      });
+    } else {
+      jQuery(document).on('turbolinks:load', function() {});
+      $('.scroller').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true
+      });
+    }
+    return $(window).resize(function() {
+      if ($(this).width() < 620) {
+        return mobile_ui_init();
+      } else {
+        return desktop_ui_init();
+      }
+    });
+  });
+
+}).call(this);
+:ET

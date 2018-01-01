@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>
+    Ajouter votre voiture
+  </h1>
+  <br>
+  <br>
+  <%= simple_form_for @car do |f| %>
+    <div class="row">
+      <h1 style="margin-right: 50%; ">Informations du vehicule</h1>
+      <br>
+      <div class="third columns">
+        <%= f.input :name, :placeholder => "Renault Kangoo 1.5dci 4m3", :type => "text", :maxlength => "26" %>
+      </div>
+      <div class="third columns">
+        <%= f.input :plaque, :placeholder => "AA-123-ZZ" %>
+      </div>
+      <div class="third columns">
+        <%= f.input :year, :placeholder => "2009" %>
+      </div>
+      <div class="third columns">
+        <%= f.input :type_car, :label => "Type", :collection => [['Tourisme','Tourisme'],['Utilitaire','Utilitaire']] %>
+      </div>
+      <div class="third columns">
+        <%= f.input :price_cents, :label => "Prix par jour"%>
+      </div>
+      <div class="third columns">
+        <%= f.input :price_by_km, :label => "Prix au km"%>
+      </div>
+      <h1 style="margin-right: 45%; ">Caracteristique du vehicule</h1>
+      <br>
+      <div class="third columns">
+        <%= f.input :engine, :label => "Moteur", :collection => [['Diesel','Diesel'],['Essence','Essence']] %>
+      </div>
+      <div class="third columns">
+        <%= f.input :nb_door, :label => "Portes", :collection => [['3 Portes','3 Portes'],['4 Portes','4 Portes'],['5 Portes','5 Portes']] %>
+      </div>
+      <div class="third columns">
+        <%= f.input :places, :collection => [['2 Places','2 Places'],['3 Places','3 Places'],['4 Places','4 Places'],['5 Places','5 Places']]%>
+      </div>
+      <div class="third columns">
+        <%= f.input :gearbox, :label => "Boite de vitesse", :collection => [['Manuelle','Manuelle'],['Automatique','Automatique']] %>
+      </div>
+      <div class="third columns">
+        <%= f.input :consommation, :label => "Consommation L/100 km", :collection => [['4L /100 km','4L /100 km'],['5L /100 km','5L /100 km'],['6L /100 km','6L /100 km'],['7L /100 km','7L /100 km'],['8L /100 km','8L /100 km'],['9L /100 km','9L /100 km'],['10L /100 km','10L /100 km'],['11L /100 km','11L /100 km'],['12L /100 km','12L /100 km'],['13L /100 km','13L /100 km'],['14L /100 km','14L /100 km']] %>
+      </div>
+      <div class="third columns">
+        <%= f.input :address, :placeholder => "Adresse de stationnement" %>
+      </div>
+      <label>Description du vehicule</label>
+      <%= f.text_area :description, :label => "Description", rows: "10" %>
+
+        <label>File Input</label><label class="file"><%= f.file_field :cars, multiple: true %></label>
+    </div>
+    <%= f.submit nil, class: 'btn btn-success' %>
+  <% end %>
+</div>

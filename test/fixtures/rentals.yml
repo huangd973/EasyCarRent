@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starts_on: 2017-12-23
+  ends_on: 2017-12-23
+  car_id: 1
+  user_id: 1
+
+two:
+  starts_on: 2017-12-23
+  ends_on: 2017-12-23
+  car_id: 1
+  user_id: 1

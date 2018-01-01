@@ -1,0 +1,126 @@
+// Specific CSS for your home-page
+h1 h2 h3 {
+  font-family: 'Work Sans', sans-serif;
+  display: inline-block;
+  // text-align: center;
+}
+
+a {
+  color: white;
+}
+
+.box{
+    display: none;
+    width: 100%;
+}
+
+.card-link:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+
+.card {
+  height: 320px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: 100% 75%;
+  background-position: top;
+  background-color: #5E5E5E;
+  color: white;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+  margin:0px;
+  margin-bottom: 10px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  background-color: #5E5E5E;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+#header {
+    // background-image: url(banner.jpg);
+    background: url(banner.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    background-position: center;
+    padding: 100px 100px;
+}
+
+h1 {
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold;
+}
+a#download {
+    display: block;
+    text-align: center;
+    width: 150px;
+    margin: 0px auto;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial;
+    border: 1px solid #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}

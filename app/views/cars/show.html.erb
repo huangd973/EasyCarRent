@@ -1,0 +1,28 @@
+<% if current_user.try(:admin?) %>
+     <%= link_to ' Editer la voiture', edit_car_path, class: 'btn btn-primary btn-lg btn-block' %>
+     <%= link_to 'Supprimer la voiture', @car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-lg btn-block' %>
+<% end %>
+
+<div class="header">
+  <div class="scroller">
+    <% @car.cars.each do |image| %>
+    <img data-lazy="<%= image.url%>">
+    <% end %>
+  </div>
+  <div class="car_description">
+    <h2><%= @car.name %></h2>
+    <h3><%= @car.year %>, Moteur <%= @car.engine %>, <%= @car.places %> Places, <%= @car.gearbox %></h3>
+    <br>
+    <h4>Adresse</h4>
+    <p><%= @car.address %><p>
+    <h4>Caractéristiques techniques</h4>
+    <p>Moteur <%= @car.engine %><p>
+    <p>Porte <%= @car.nb_door %><p>
+    <p><%= @car.places %> Places<p>
+    <p>Boite de Vitesse <%= @car.gearbox %><p>
+    <p>Consommation <%= @car.consommation %><p>
+    <h4>Description</h4>
+    <p><%= @car.description %><p>
+    <%= link_to 'Rent this car', new_car_rental_path(@car), class: 'btn btn-success' %>
+  </div>
+</div>
