@@ -16,8 +16,12 @@ class CarsController < ApplicationController
   end
 
   def search
-    @available_car_id = Rental.where.not("starts_on >= ? AND ends_on <= ?", params[:starts_on], params[:ends_on]).pluck(:car_id)
-    @available_cars = Car.find(@available_car_id)
+    if params[:starts_on].nil?
+      redirect_to cars_path
+    else
+      @available_car_id = Rental.where.not("starts_on >= ? AND ends_on <= ?", params[:starts_on], params[:ends_on]).pluck(:car_id)
+      @available_cars = Car.find(@available_car_id)
+    end
   end
 
   def create
