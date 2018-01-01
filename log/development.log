@@ -33327,3 +33327,62 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 74ms (Views: 71.1ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/cars/search" for 127.0.0.1 at 2018-01-01 18:06:04 +0100
+Processing by CarsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPKEur0GCODeH+YmkEB59Ngufz21NcdtNkVBWtiv1PSWn/0pDvZqHUHE1rqN2z7zJQpedmFFwIuqG+ci5yHIUw==", "starts_on"=>"", "ends_on"=>"", "commit"=>"Save changes"}
+  [1m[35m (41.7ms)[0m  [1m[34mSELECT "rentals"."car_id" FROM "rentals" WHERE (NOT (starts_on >= '' AND ends_on <= ''))[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 42.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::InvalidDatetimeFormat: ERROR:  invalid input syntax for type date: ""
+LINE 1: ...."car_id" FROM "rentals" WHERE (NOT (starts_on >= '' AND end...
+                                                             ^
+: SELECT "rentals"."car_id" FROM "rentals" WHERE (NOT (starts_on >= '' AND ends_on <= ''))):
+  
+app/controllers/cars_controller.rb:22:in `search'
+Started GET "/" for 127.0.0.1 at 2018-01-01 18:06:09 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 6]]
+  Rendered pages/home.html.erb within layouts/application (24.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (17.0ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 253ms (Views: 241.0ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/cars/search" for 127.0.0.1 at 2018-01-01 18:06:11 +0100
+Processing by CarsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZ7bPrFEfOoJnZs6z8N4J0ZTK29oNVlKWRsObP6DhCCzMLm7xiWEf3/7H9oYWTwXZAXwd1SQNUre9H8+IzYAfw==", "starts_on"=>"", "ends_on"=>"", "commit"=>"Save changes"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "rentals"."car_id" FROM "rentals" WHERE (NOT (starts_on >= '' AND ends_on <= ''))[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::InvalidDatetimeFormat: ERROR:  invalid input syntax for type date: ""
+LINE 1: ...."car_id" FROM "rentals" WHERE (NOT (starts_on >= '' AND end...
+                                                             ^
+: SELECT "rentals"."car_id" FROM "rentals" WHERE (NOT (starts_on >= '' AND ends_on <= ''))):
+  
+app/controllers/cars_controller.rb:22:in `search'
+Started PUT "/__web_console/repl_sessions/7a5661a922379c95720bcfc917780c67" for 127.0.0.1 at 2018-01-01 18:07:06 +0100
+Started PUT "/__web_console/repl_sessions/7a5661a922379c95720bcfc917780c67" for 127.0.0.1 at 2018-01-01 18:07:07 +0100
+Started POST "/cars/search" for 127.0.0.1 at 2018-01-01 18:07:47 +0100
+Processing by CarsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZ7bPrFEfOoJnZs6z8N4J0ZTK29oNVlKWRsObP6DhCCzMLm7xiWEf3/7H9oYWTwXZAXwd1SQNUre9H8+IzYAfw==", "starts_on"=>"", "ends_on"=>"", "commit"=>"Save changes"}
+Redirected to http://localhost:3000/cars
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cars" for 127.0.0.1 at 2018-01-01 18:07:47 +0100
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" ORDER BY "cars"."name" ASC[0m
+  Rendered cars/index.html.erb within layouts/application (36.6ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 110ms (Views: 93.7ms | ActiveRecord: 4.9ms)
+
+

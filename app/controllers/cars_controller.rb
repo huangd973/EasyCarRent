@@ -16,7 +16,7 @@ class CarsController < ApplicationController
   end
 
   def search
-    if params[:starts_on].nil?
+    if params[:starts_on] == ""
       redirect_to cars_path
     else
       @available_car_id = Rental.where.not("starts_on >= ? AND ends_on <= ?", params[:starts_on], params[:ends_on]).pluck(:car_id)
