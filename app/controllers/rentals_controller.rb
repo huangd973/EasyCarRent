@@ -20,17 +20,15 @@ class RentalsController < ApplicationController
   def create
     @rental = @car.rentals.new(rental_params)
     @rental.user = current_user
-    @rental.save
-    redirect_to car_rental_path(@rental.car, @rental)
-    # respond_to do |format|
-    #   if @rental.save
-    #     format.html { redirect_to car_rental_path(@rental.car, @rental), notice: 'Rental was successfully created.' }
-    #     format.json { render :show, status: :created, location: @rental }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @rental.errors, status: :unprocessable_entity }
-    # #   end
-    # end
+    respond_to do |format|
+      if @rental.save
+        format.html { redirect_to car_rental_path(@rental.car, @rental), notice: 'Rental was successfully created.' }
+        format.json { render :show, status: :created, location: @rental }
+      else
+        format.html { render :new }
+        format.json { render json: @rental.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
@@ -53,6 +51,6 @@ class RentalsController < ApplicationController
     end
 
     def rental_params
-      params.require(:rental).permit(:starts_on, :ends_on, :car)
+      params.require(:rental).permit(:status, :starts_on, :ends_on, :car)
     end
 end

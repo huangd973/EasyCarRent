@@ -1,0 +1,57 @@
+// //Google map car
+
+gon.watch
+json_array = gon.hasha
+$(document).ready(function() {
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {zoomControl: true, mapTypeControl: false, streetViewControl: false, fullscreenControl: true,  maxZoom: 16 }, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(gon.hasha, {draggable: true});
+  handler.map.centerOn(markers)
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+
+});
+
+function createSidebarLi(json){
+  return ("<p><a>" + json.marker_title + "</a></p>");
+};
+
+function bindLiToMarker($li, marker){
+  $li.on('click', function(){
+    handlers.getMap().setZoom(14);
+    marker.setMap(handlers.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+};
+
+function createSidebar(json_array){
+  _.each(json_array, function(json){
+    var $li = $( createSidebarLi(json) );
+    $li.appendTo('#sidebar_container');
+    bindLiToMarker($li, json.marker);
+  });
+};
+
+handlers = Gmaps.build('Google');
+handlers.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+
+  var markers = handlers.addMarkers(json_array);
+
+  _.each(json_array, function(json, index){
+    json.marker = markers[index];
+  });
+
+  createSidebar(json_array);
+  handlers.bounds.extendWith(markers);
+  handlers.fitMapToBounds();
+});
+
+
+function updateDiv()
+{
+    $( "#sidebar_builder" ).load(window.location.href + " #sidebar_builder" );
+}
+

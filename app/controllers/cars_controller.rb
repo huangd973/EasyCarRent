@@ -8,7 +8,12 @@ class CarsController < ApplicationController
   end
 
   def show
+    AddressFromXeeJob.perform_now(@car.plaque)
     @rentals = @car.rentals.order :starts_on
+    gon.hasha = Gmaps4rails.build_markers(@car) do |car, marker|
+      marker.lat car.latitude
+      marker.lng car.longitude
+    end
   end
 
   def new
@@ -16,18 +21,24 @@ class CarsController < ApplicationController
   end
 
   def search
+    @result = []
     if params[:starts_on] == ""
       redirect_to cars_path
     else
-      @available_car_id = Rental.where.not("starts_on >= ? AND ends_on <= ?", params[:starts_on], params[:ends_on]).pluck(:car_id)
+      starts_on = Date.parse(params[:starts_on]).strftime("%m/%d/%Y")
+      ends_on = Date.parse(params[:ends_on]).strftime("%m/%d/%Y")
+      @available_car_id = Rental.where.not("starts_on >= ? AND ends_on <= ?", starts_on, ends_on).pluck(:car_id)
       @available_cars = Car.find(@available_car_id)
+      @available_cars.each do |car|
+        @result << car if car.city == params[:city]
+      end
     end
   end
 
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to cars_path
+      redirect_to new_car_rental_path(@car)
     end
   end
 
@@ -53,7 +64,6 @@ class CarsController < ApplicationController
     end
 
     def car_params
-      params.require(:car).permit(:name, :description, :address, :plaque, :price_cents, :gearbox, :consommation, :engine, :nb_door, :places, :type_car, :price_by_km, :year, {cars: []})
+      params.require(:car).permit(:name,:city , :description, :address, :plaque, :price_cents, :gearbox, :consommation, :engine, :nb_door, :places, :type_car, :price_by_km, :year, {cars: []})
     end
-
 end

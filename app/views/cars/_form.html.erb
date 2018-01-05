@@ -43,7 +43,7 @@
       <div class="third columns">
         <%= f.input :consommation, :label => "Consommation L/100 km", :collection => [['4L /100 km','4L /100 km'],['5L /100 km','5L /100 km'],['6L /100 km','6L /100 km'],['7L /100 km','7L /100 km'],['8L /100 km','8L /100 km'],['9L /100 km','9L /100 km'],['10L /100 km','10L /100 km'],['11L /100 km','11L /100 km'],['12L /100 km','12L /100 km'],['13L /100 km','13L /100 km'],['14L /100 km','14L /100 km']] %>
       </div>
-      <div class="third columns">
+      <div class="third columns"> <!-- addresse autocomplete a faire -->
         <%= f.input :address, :placeholder => "Adresse de stationnement" %>
       </div>
       <label>Description du vehicule</label>
@@ -51,6 +51,6 @@
 
         <label>File Input</label><label class="file"><%= f.file_field :cars, multiple: true %></label>
     </div>
-    <%= f.submit nil, class: 'btn btn-success' %>
-  <% end %>
-</div>
+    <%= f.submit %>
+    <% end %>
+  </div>
