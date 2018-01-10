@@ -7,7 +7,6 @@ var dateToday = new Date();
           defaultDate: "+1d",
           changeMonth: true,
           numberOfMonths: 2,
-          minDate: dateToday
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
@@ -16,7 +15,7 @@ var dateToday = new Date();
         defaultDate: "+1d",
         changeMonth: false,
         numberOfMonths: 2,
-        minDate: dateToday
+
       })
       .on( "change", function() {
         from.datepicker( "option", "minDate" ,"maxDate", getDate( this ) );

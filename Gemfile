@@ -25,7 +25,7 @@ gem 'gon', '~> 6.2'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'pg_search'
-
+gem 'react-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

@@ -2,9 +2,9 @@
 <div id="header">
   <h1>Louez un vehicule avec votre Smartphone</h1>
   <div class="form-inline">
-    <%= form_tag cars_search_path do %>
+    <%= form_tag cars_search_path(:city => @city_p) do %>
       <div class="form-group mx-sm-3 mb-3">
-        <%= select_tag "city", options_from_collection_for_select(Car.all, :city, :city) , {:class=>'form-control', :prompt => 'Ville de depart'}  %>
+        <%= select_tag "city", options_for_select(@counted.map { |mg| [mg[0] + " (" +mg[1] + " vehicules)" ,  mg[0]] }), {:class=>'form-control', :prompt => 'Ville de depart'}  %>
       </div>
       <div class="form-group mx-sm-3 mb-3">
         <%= text_field_tag  'starts_on','', id: "from"%>
@@ -23,6 +23,7 @@
 <h1 style="color: black">Nos Vehicules</h1>
 <br>
 <div class="container">
+  <%= react_component("Post", {title: "Hello World"}) %>
   <% @cars.each do |car| %>
   <div class="column">
     <div class="col-xs-12 col-sm-4">

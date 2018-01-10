@@ -25,8 +25,8 @@ class CarsController < ApplicationController
     if params[:starts_on] == ""
       redirect_to cars_path
     else
-      starts_on = Date.parse(params[:starts_on]).strftime("%m/%d/%Y")
-      ends_on = Date.parse(params[:ends_on]).strftime("%m/%d/%Y")
+      starts_on = Date.parse(params[:starts_on])
+      ends_on = Date.parse(params[:ends_on])
       @available_car_id = Rental.where.not("starts_on >= ? AND ends_on <= ?", starts_on, ends_on).pluck(:car_id)
       @available_cars = Car.find(@available_car_id)
       @available_cars.each do |car|
