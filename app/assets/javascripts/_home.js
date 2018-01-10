@@ -15,11 +15,10 @@ var dateToday = new Date();
       to = $( "#to" ).datepicker({
         defaultDate: "+1d",
         changeMonth: false,
-        numberOfMonths: 2,
-        minDate: dateToday
+        numberOfMonths: 2
       })
       .on( "change", function() {
-        from.datepicker( "option", "minDate" ,"maxDate", getDate( this ) );
+        from.datepicker( "option", "maxDate", getDate( this ) );
       });
 
     function getDate( element ) {
