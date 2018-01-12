@@ -15,7 +15,6 @@ gem "jquery-slick-rails"
 gem 'coffee-rails', '~> 4.2'
 gem 'httparty'
 gem 'jquery-rails'
-gem 'flatpickr_rails'
 gem 'jquery-ui-rails'
 gem 'sidekiq', '~> 5.0', '>= 5.0.5'
 gem 'sidekiq-failures', '~> 1.0'
@@ -24,7 +23,7 @@ gem 'gmaps4rails'
 gem 'gon', '~> 6.2'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem 'pg_search'
+gem 'bootstrap'
 
 
 gem 'autoprefixer-rails'

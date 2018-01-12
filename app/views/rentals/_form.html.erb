@@ -1,11 +1,13 @@
-
-<%= simple_form_for([@car, @rental]) do |f| %>
 <% if current_user.try(:admin?) %>
+<%= simple_form_for([@car, @rental]) do |f| %>
      <%= f.input :status, :collection => [['Available','available'],['Offline','offline']]  %>
-<% end %>
-<% if current_user.try(:admin!) %>
-     <%= f.input :starts_on %>
-     <%= f.input :ends_on %>
      <%= f.submit nil, class: 'btn btn-success' %>
 <% end %>
+<% end %>
+
+<%= simple_form_for([@car, @rental]) do |f| %>
+     <%= f.input :starts_on %>
+     <%= f.input :ends_on %>
+     <%= f.input :status, :as => :hidden, :input_html => { :value => "booked_mifleet" } %>
+     <%= f.submit nil, class: 'btn btn-success' %>
 <% end %>

@@ -1,13 +1,13 @@
 /*
- *= require jquery-ui
- *= require fullcalendar
- */
-
+*= require jquery-ui
+*= require fullcalendar
+*/
 
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+
 
 // External libraries
 @import "bootstrap-sprockets";
@@ -21,3 +21,4 @@
 @import "pages/index";
 @import "slick";
 @import "slick-theme";
+

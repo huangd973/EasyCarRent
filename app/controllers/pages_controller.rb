@@ -4,10 +4,13 @@ class PagesController < ApplicationController
 
   def home
     @cars = Car.all.order('RANDOM()').limit(6)
+    cars = Car.all
+    @counted = Hash.new(0)
+    cars.each { |h| @counted[h["city"]] += 1 }
+    @counted = @counted.map {|k,v| [k, v.to_s] }
   end
 
   def dashboard
-    AddressFromXeeJob.perform_now("all")
     @cars_all = Car.all
     gon.hasha = Gmaps4rails.build_markers(@cars_all) do |car, marker|
       marker.title car.name
