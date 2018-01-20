@@ -3,7 +3,7 @@ class AddressFromXeeJob < ApplicationJob
 
   def perform(plaque)
     headers = {
-      "Authorization"  => "Bearer ad3d4d935ccf506210d88f740a6ddd963b74c74be28d2484c12a0a2d29fcb8ac"
+      "Authorization"  => "Bearer 423128d467cdd4a515d75497f554136cf6ec25a439259c7cb95717dd6550e50c"
       }
       if plaque == "AB-506-JF"
         u = HTTParty.get(

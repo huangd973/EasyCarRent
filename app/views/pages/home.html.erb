@@ -1,29 +1,30 @@
 
 <div id="header">
+  <div class="container_search">
   <h1>Louez un vehicule avec votre Smartphone</h1>
-  <div class="form-inline">
+  <div class="form-inline text-center" style="padding-top: 10%;">
     <%= form_tag cars_search_path(:city => @city_p) do %>
       <div class="form-group mx-sm-3 mb-3">
-        <%= select_tag "city", options_for_select(@counted.map { |mg| [mg[0] + " (" +mg[1] + " vehicules)" ,  mg[0]] }), {:class=>'form-control', :prompt => 'Ville de depart'}  %>
+        <%= select_tag "city", options_for_select(@counted.map { |mg| [mg[0] + " (" + mg[1] + " vehicules)" ,  mg[0]] }), {:class=>'form-control', :prompt => 'Ville de depart'}  %>
+      </div>
+      <div class="form-group mx-sm-3 mb-3" style="margin-top: 15px;">
+        <%= text_field_tag  'starts_on','Début de la location', id: "search_date"%>
+      </div>
+      <div class="form-group mx-sm-3 mb-3" style="margin-top: 15px;">
+        <%= text_field_tag 'ends_on','Fin de location', id: "search_date" %>
       </div>
       <div class="form-group mx-sm-3 mb-3">
-        <%= text_field_tag  'starts_on','', id: "from"%>
-      </div>
-      <div class="form-group mx-sm-3 mb-3">
-        <%= text_field_tag 'ends_on','', id: "to" %>
-      </div>
-      <div class="form-group mx-sm-3 mb-3">
-        <%= select_tag "distance", options_for_select([['Distance', ''], ['100 km', 100], ['200 km', 200], ['300 km', 300], ['400 km', 400],['500 km', 500], ['600 km', 700], ['300 km', 800], ['400 km', 900],['1000 km', 1000], ['1100 km', 1100], ['1200 km', 1200], ['1300 km', 1300],['1400 km', 1400], ['1500 km', 1500], ['2000 km', 2000], ['3000 km', 3000]], disabled: '', selected: '', :class=>'form-control', :prompt => 'Distance') %>
+        <%= select_tag "distance", options_for_select([['Distance', ''], ['100 km', 100], ['200 km', 200], ['300 km', 300], ['400 km', 400],['500 km', 500], ['600 km', 700], ['300 km', 800], ['400 km', 900],['1000 km', 1000], ['1100 km', 1100], ['1200 km', 1200], ['1300 km', 1300],['1400 km', 1400], ['1500 km', 1500], ['2000 km', 2000], ['3000 km', 3000]], disabled: '', selected: '', :class=>'form-control', :prompt => 'Distance'), {:class=>'form-control', :prompt => '___________'} %>
       </div>
       <%= submit_tag 'Rechercher' %>
       <% end %>
     </div>
+  </div>
 </div>
 
 <h1 style="color: black">Nos Vehicules</h1>
 <br>
 <div class="container">
-  <%= react_component("Post", {title: "Hello World"}) %>
   <% @cars.each do |car| %>
   <div class="column">
     <div class="col-xs-12 col-sm-4">

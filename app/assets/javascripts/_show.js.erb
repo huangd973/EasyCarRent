@@ -2,20 +2,11 @@
 
 gon.watch
 json_array = gon.hasha
-$(document).ready(function() {
 
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {zoomControl: true, mapTypeControl: false, streetViewControl: false, fullscreenControl: true,  maxZoom: 16 }, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(gon.hasha, {draggable: true});
-  handler.map.centerOn(markers)
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
 
-});
 
 function createSidebarLi(json){
-  return ("<p><a>" + json.marker_title + "</a></p>");
+  return ("<p><a>" + json.marker_title + " (" + json.plaque + ")" + "</a></p>");
 };
 
 function bindLiToMarker($li, marker){
@@ -30,24 +21,26 @@ function bindLiToMarker($li, marker){
 function createSidebar(json_array){
   _.each(json_array, function(json){
     var $li = $( createSidebarLi(json) );
-    $li.appendTo('#sidebar_container');
+    $li.appendTo('#vehicules');
     bindLiToMarker($li, json.marker);
   });
 };
 
-handlers = Gmaps.build('Google');
-handlers.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
 
+handlers = Gmaps.build('Google');
+handlers.buildMap({provider: { disableDefaultUI: true, fullscreenControl: true, zoomControl: true }, internal: {id: 'map'}}, function(){
   var markers = handlers.addMarkers(json_array);
 
   _.each(json_array, function(json, index){
     json.marker = markers[index];
   });
-
   createSidebar(json_array);
+  handlers.map.centerOn(markers[0]);
   handlers.bounds.extendWith(markers);
-  handlers.fitMapToBounds();
+  handlers.getMap().setZoom(16);
 });
+
+
 
 
 function updateDiv()

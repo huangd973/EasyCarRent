@@ -1781,6 +1781,10 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
+datepair.js@^0.4.15:
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/datepair.js/-/datepair.js-0.4.15.tgz#afb4becd8324a6ee40f48ae73386e9c9f0721b79"
+
 dates-of-today@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dates-of-today/-/dates-of-today-1.0.0.tgz#d22fde47267bc6223904e6e0d5bcbc2121bdc1e2"
@@ -2371,9 +2375,9 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-flatpickr@^4.1.4:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.1.4.tgz#4b7244976a426976fd6bcca593efdda5cb7e910e"
+flatpickr@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.2.3.tgz#084b95d353b3b64a164ebfe7151df75c8dae14b1"
 
 flatten@^1.0.2:
   version "1.0.2"

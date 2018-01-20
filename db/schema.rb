@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104211207) do
+ActiveRecord::Schema.define(version: 20180115230821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20180104211207) do
     t.float "longitude"
     t.float "computerfueltank"
     t.float "fueltank"
+    t.string "gmap"
+    t.string "gmaps"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
